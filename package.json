@@ -1,0 +1,31 @@
+{
+  "name": "backend-group-project-comp229",
+  "version": "1.0.0",
+  "description": "backend",
+  "keywords": [
+    "Comp229",
+    "express",
+    "node",
+    "mern"
+  ],
+  "homepage": "https://github.com/Dev-Divas/BACKEND-GROUP-PROJECT-COMP229#readme",
+  "bugs": {
+    "url": "https://github.com/Dev-Divas/BACKEND-GROUP-PROJECT-COMP229/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-Divas/BACKEND-GROUP-PROJECT-COMP229.git"
+  },
+  "license": "MIT",
+  "author": "Ayushi Patel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mongoose": "^9.12.0"
+  }
+}
