@@ -1,7 +1,9 @@
 let configDB = require('./config/db');
 let app = require("./config/express");
 let http = require('http');
+let productsRouter = require('./routes/products');
 
+app.use('/api/products', productsRouter);
 configDB().catch(console.dir);
 var server = http.createServer(app);
 
