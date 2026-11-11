@@ -1,5 +1,5 @@
-
-let ProductsModel = require('../model/product');
+console.log("Products model loaded");
+let ProductsModel = require('../models/product');
 
 console.log("Product Model:", ProductsModel);
 console.log("Find:", typeof ProductsModel.find);
