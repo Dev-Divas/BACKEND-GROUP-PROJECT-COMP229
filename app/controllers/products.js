@@ -1,5 +1,5 @@
 
-let ProductsModel = require('../models/product');
+let ProductsModel = require('../model/product');
 
 console.log("Product Model:", ProductsModel);
 console.log("Find:", typeof ProductsModel.find);
