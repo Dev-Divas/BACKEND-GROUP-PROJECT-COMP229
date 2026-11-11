@@ -1,6 +1,9 @@
 
 let ProductsModel = require('../models/products');
 
+console.log("Product Model:", ProductsModel);
+console.log("Find:", typeof ProductsModel.find);
+console.log("Create:", typeof ProductsModel.create);
 module.exports.create = async function (req, res, next) {
     try {  
         let newProduct = ProductsModel(req.body);
@@ -107,7 +110,7 @@ module.exports.disable = async function (req, res, next) {
             },
             {
                 $set: {
-                    status: "Inactive",
+                    status: "Disabled",
                     updatedAt: new Date()
                 }
             }
