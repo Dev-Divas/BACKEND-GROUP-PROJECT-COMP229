@@ -1,9 +1,6 @@
-console.log("Products model loaded");
+
 let ProductsModel = require('../models/product');
 
-console.log("Product Model:", ProductsModel);
-console.log("Find:", typeof ProductsModel.find);
-console.log("Create:", typeof ProductsModel.create);
 module.exports.create = async function (req, res, next) {
     try {  
         let newProduct = ProductsModel(req.body);
