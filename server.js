@@ -1,7 +1,7 @@
 let configDB = require('./config/db');
 let app = require("./config/express");
 let http = require('http');
-let productsRouter = require('./app/routes/products');
+let productsRouter = require('./routes/products');
 console.log("Products router loaded");
 
 app.use('/api/products', productsRouter);
