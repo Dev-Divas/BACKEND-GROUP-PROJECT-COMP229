@@ -17,7 +17,8 @@ const registerUser = async (req, res) => {
             });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword =
+            await bcrypt.hash(password, 10);
 
         const user = await User.create({
             username,
@@ -26,8 +27,7 @@ const registerUser = async (req, res) => {
         });
 
         res.status(201).json({
-            message: "User registered successfully",
-            user
+            message: "User registered successfully"
         });
 
     } catch (error) {
@@ -37,6 +37,7 @@ const registerUser = async (req, res) => {
         });
 
     }
+
 };
 
 // Login User
@@ -49,25 +50,21 @@ const loginUser = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (!user) {
-
-            return res.status(400).json({
-                message: "User not found"
+            return res.status(401).json({
+                message: "Invalid email"
             });
-
         }
 
-        const validPassword =
+        const match =
             await bcrypt.compare(
                 password,
                 user.password
             );
 
-        if (!validPassword) {
-
-            return res.status(400).json({
+        if (!match) {
+            return res.status(401).json({
                 message: "Invalid password"
             });
-
         }
 
         const token = jwt.sign(
@@ -91,22 +88,42 @@ const loginUser = async (req, res) => {
         });
 
     }
+
 };
 
 // Get Profile
 const getProfile = async (req, res) => {
 
-    res.json({
-        message: "Profile Route Working"
-    });
+    const user =
+        await User.findById(req.user.id)
+        .select("-password");
+
+    res.json(user);
 
 };
 
 // Update Profile
 const updateProfile = async (req, res) => {
 
+    const user =
+        await User.findById(req.user.id);
+
+    if (!user) {
+        return res.status(404).json({
+            message: "User not found"
+        });
+    }
+
+    user.username =
+        req.body.username || user.username;
+
+    user.email =
+        req.body.email || user.email;
+
+    await user.save();
+
     res.json({
-        message: "Update Profile Route Working"
+        message: "Profile updated"
     });
 
 };
