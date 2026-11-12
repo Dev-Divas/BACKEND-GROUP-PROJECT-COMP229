@@ -1,6 +1,7 @@
 let configDB = require('./config/db');
 let app = require("./config/express");
 let http = require('http');
+let authRoutes = require('./routes/authRoutes');
 
 
 configDB().catch(console.dir);
