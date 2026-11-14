@@ -1,5 +1,4 @@
 const express = require('express');
-
 const app = express();
 
 const authRoutes = require('../routes/authRoutes');
@@ -10,5 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productsRoutes);
+
+app.get('/', (req, res) => {
+    res.send('Luxury Marketplace API Running');
+});
 
 module.exports = app;
