@@ -75,8 +75,7 @@ module.exports.update = async function (req, res, next) {
                     size: req.body.size,
                     condition: req.body.condition,
                     description: req.body.description,
-                    image: req.body.image,
-                    updatedAt: new Date()
+                    image: req.body.image
                 }
             }
         );
@@ -107,8 +106,7 @@ module.exports.disable = async function (req, res, next) {
             },
             {
                 $set: {
-                    status: "Disabled",
-                    updatedAt: new Date()
+                    status: "Disabled"
                 }
             }
         );
