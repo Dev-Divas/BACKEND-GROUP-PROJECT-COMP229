@@ -1,0 +1,25 @@
+{
+  "name": "backend-group-project-comp229",
+  "version": "1.0.0",
+  "description": "Backend repository for the group project of COMP229 – Web Application Development 2026",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-Divas/BACKEND-GROUP-PROJECT-COMP229.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dev-Divas/BACKEND-GROUP-PROJECT-COMP229/issues"
+  },
+  "homepage": "https://github.com/Dev-Divas/BACKEND-GROUP-PROJECT-COMP229#readme",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "mongoose": "^9.12.1"
+  }
+}
